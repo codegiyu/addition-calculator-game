@@ -1,0 +1,23 @@
+.main-content {
+    background: linear-gradient(#10152629, #10152629), url("../../assets/img/welcome-screen.jpg");
+    background-size: cover;
+    background-position: center;
+    border-radius: 40px;
+    overflow: auto;
+    padding: 24px;
+    width: 400px;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+
+    @media only screen and (max-width: 576px) {
+        width: 100vw;
+        height: 100vh;
+        padding: 16px;
+        border-radius: 0;
+    }
+}
+
+app-main-game {
+    width: 100%;
+}

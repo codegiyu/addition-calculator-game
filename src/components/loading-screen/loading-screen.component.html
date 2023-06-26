@@ -1,0 +1,19 @@
+<div id="loading-screen-slide" class="section-slide">
+    <div class="loading-screen-container">
+        <div class="loading-wrap">
+            <h6 class="">
+                Loading 
+                <span> .</span>
+                <span [ngClass]="{'text-transparent': !dotOneShow }"> .</span>
+                <span [ngClass]="{'text-transparent': !dotTwoShow }"> .</span>
+                <span [ngClass]="{'text-transparent': !dotThreeShow }"> .</span>
+            </h6>
+            <p class="">
+                <span>{{ loadingPercent }}</span>%
+            </p>
+        </div>
+        <p class="loading-fun-text">
+            {{ loadingFunText }}
+        </p>
+    </div>
+</div>

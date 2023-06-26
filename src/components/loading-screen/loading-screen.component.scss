@@ -1,0 +1,56 @@
+#loading-screen-slide {
+    height: calc(90vh - 96px);
+
+    @media only screen and (max-width: 576px) {
+        height: calc(100vh - 96px);
+    }
+}
+.loading-screen-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    position: relative;
+    color: white;
+    overflow: hidden;
+
+    & .loading-wrap {
+        width: 100%;
+        display: grid;
+        padding: 0 24px;
+
+        & h6 {
+            font-size: 24px;
+            line-height: 28px;
+            text-align: center;
+            margin: 10px 0;
+
+            & span {
+                font-size: 34px;
+                line-height: 40px;
+            }
+
+            & span.text-transparent {
+                color: transparent;
+            }
+        }
+
+        & p {
+            font-size: 12px;
+            line-height: 12px;
+            text-align: center;
+        }
+    }
+
+    .loading-fun-text {
+        width: 100%;
+        font-size: 13px;
+        line-height: 13px;
+        color: white;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        bottom: 60px;
+    }
+}

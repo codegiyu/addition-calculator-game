@@ -1,0 +1,15 @@
+
+
+.options-form-wrap {
+    border: 1px solid #6B6B6D;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 24px 18px;
+    display: grid;
+    gap: 12px;
+
+    & label {
+        color: white;
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,56 @@
+<div id="main-game" class="section-slide">
+    <form [formGroup]="sumForm" (ngSubmit)="sumIntegers()" novalidate>
+        <div class="main-game-wrap">
+            <div class="options-select-wrap question-wrap">
+                <div class="row">
+                    <div class="integers-wrap">
+                        <p class="integers numbers">
+                            {{ integer1 }}
+                        </p>
+                        <p class="integers">  +  </p>
+                        <p class="integers numbers">
+                            {{ integer2 }}
+                        </p>
+                        <p class="integers">  =  </p>
+                    </div>
+                    <div class="sum-input-wrap">
+                        <div sui-input suiSize="small">
+                            <input
+                                type="number"
+                                name="sum"
+                                formControlName="sum"
+                                id="sum"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="game-btn-line">
+                    <button type="submit" [disabled]="sumForm.invalid" class="game-btn numbers">
+                        Enter
+                    </button>
+                </div>
+            </div>
+
+            <div class="about-wrap">
+                <div class="about-header">
+                    <h5 class="">Scores</h5>
+                </div>
+                <div class="about-body-wrap">
+                    <div class="about-body scores">
+                        <div class="correct score-half">
+                            <p>
+                                {{ correctCount }}
+                            </p>
+                        </div>
+                        <div class="incorrect score-half">
+                            <p>
+                                {{ incorrectCount }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

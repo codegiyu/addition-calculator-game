@@ -1,0 +1,90 @@
+<div id="options-select-slide" class="section-slide">
+    <div class="options-select-wrap">
+        <div class="option-details-wrap">
+            <p class="option-details">
+                Two numbers will be selected randomly between then minimum and maximum values for you to find their sum.
+            </p>
+            <p class="option-details">
+                You may edit the default minimum and maximum values to any values of your choice between -1000 and 1000 (inclusive).
+            </p>
+            <p class="option-details">
+                However note that your values must have a difference of at least 100 between them.
+            </p>
+        </div>
+    </div>
+
+    <div class="about-wrap">
+        <div class="about-header">
+            <h5 class="">Options</h5>
+        </div>
+        <div class="about-body-wrap">
+            <form sui-form [formGroup]="optionsForm" (ngSubmit)="submitOptions()"  novalidate>
+                <div class="options-form-wrap">
+                    <div suiFormFields suiWidth="two">
+                        <div suiFormField>
+                            <label for="minimum">Minimum</label>
+                            <div sui-input suiSize="small">
+                                <input
+                                    type="number"
+                                    name="minimum"
+                                    formControlName="minimum"
+                                    id="minimum"
+                                    min="-1000"
+                                    max="1000"
+                                    required
+                                />
+                            </div>
+                            <div *ngIf="minimum?.touched && minimum?.errors" class="error-line">
+                                <span
+                                    *ngIf="minimum && minimum?.touched && minimum.errors && minimum.errors['required']"
+                                    class="ui pointing red basic label"
+                                >
+                                    A value for minimum is required
+                                </span>
+                                <span
+                                    *ngIf="minimum && minimum?.touched && minimum.errors && (minimum.errors['min'] || minimum.errors['max'])"
+                                    class="ui pointing red basic label"
+                                >
+                                    This value is not within the specified range
+                                </span>
+                            </div>
+                        </div>
+                        <div suiFormField>
+                            <label for="maximum">Maximum</label>
+                            <div sui-input suiSize="small">
+                                <input
+                                    type="number"
+                                    name="maximum"
+                                    formControlName="maximum"
+                                    id="maximum"
+                                    min="-1000"
+                                    max="1000"
+                                    required
+                                />
+                            </div>
+                            <div *ngIf="maximum?.touched && maximum?.errors" class="error-line">
+                                <span
+                                    *ngIf="maximum && maximum?.touched && maximum.errors && maximum.errors['required']"
+                                    class="ui pointing red basic label"
+                                >
+                                    A value for maximum is required
+                                </span>
+                                <span
+                                    *ngIf="maximum && maximum?.touched && maximum.errors && (maximum.errors['min'] || maximum.errors['max'])"
+                                    class="ui pointing red basic label"
+                                >
+                                    This value is not within the specified range
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="game-btn-line">
+                        <button type="submit" [disabled]="optionsForm.invalid" class="game-btn">
+                            Start Game
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<section class="main-content bg-dark-blue mx-auto">
+    <app-game-cover *ngIf="coverActive" (slideChange)="setActiveSlide($event)"></app-game-cover>
+    <app-game-options *ngIf="optionsActive" (slideChange)="setActiveSlide($event)"></app-game-options>
+    <app-loading-screen *ngIf="loadingScreenActive" (slideChange)="setActiveSlide($event)"></app-loading-screen>
+    <app-main-game *ngIf="mainGameActive"></app-main-game>
+</section>
